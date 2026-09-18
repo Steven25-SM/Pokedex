@@ -1,70 +1,198 @@
-# Getting Started with Create React App
+# 🚀 Guía de Despliegue
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Requisitos
 
-## Available Scripts
+Antes de ejecutar o desplegar el proyecto, asegúrate de tener instalado:
 
-In the project directory, you can run:
+* [Node.js](https://nodejs.org/)
+* npm
+* Git
 
-### `npm start`
+Puedes comprobar las versiones con:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+node -v
+npm -v
+git --version
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 💻 Ejecutar el proyecto localmente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Clonar el repositorio
 
-### `npm run build`
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Entrar al proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd ajax-react-lab
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Instalar las dependencias
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Este comando instala las dependencias definidas en `package.json`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Ejecutar en desarrollo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+La aplicación estará disponible normalmente en:
 
-## Learn More
+```text
+http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌐 Despliegue en Vercel
 
-### Code Splitting
+Este proyecto puede desplegarse directamente en Vercel porque es una aplicación frontend de React y no requiere un servidor propio.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 1. Subir el proyecto a GitHub
 
-### Analyzing the Bundle Size
+Si todavía no tienes el repositorio:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <URL_DEL_REPOSITORIO>
+git push -u origin main
+```
 
-### Making a Progressive Web App
+### 2. Importar el proyecto en Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Ingresa a Vercel.
+2. Inicia sesión con GitHub.
+3. Selecciona **Add New → Project**.
+4. Importa el repositorio del proyecto.
+5. Vercel detectará automáticamente que es un proyecto de React.
 
-### Advanced Configuration
+Configuración esperada:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```text
+Framework Preset: Create React App
+Build Command: npm run build
+Output Directory: build
+Install Command: npm install
+```
 
-### Deployment
+6. Presiona **Deploy**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🔌 API utilizada
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La aplicación obtiene la información de Pokémon mediante **PokeAPI**:
+
+```text
+https://pokeapi.co/
+```
+
+No es necesario configurar una API Key.
+
+La aplicación realiza las peticiones directamente desde React mediante Axios.
+
+---
+
+## 🔎 Funcionalidades
+
+La aplicación permite:
+
+* 🔍 Buscar Pokémon por nombre en tiempo real.
+* 🔢 Buscar Pokémon mediante coincidencias de nombre.
+* ⚖️ Filtrar por peso mínimo.
+* 🏷️ Filtrar por tipo.
+* 🔤 Mostrar resultados ordenados alfabéticamente.
+* 🖼️ Mostrar imagen, nombre, ID, peso y tipos.
+* 📱 Adaptarse a diferentes tamaños de pantalla.
+* 🌐 Consultar Pokémon fuera del catálogo inicial mediante PokeAPI.
+
+---
+
+## 🏗️ Tecnologías
+
+* **React**
+* **JavaScript**
+* **Axios**
+* **Tailwind CSS**
+* **PokeAPI**
+* **HTML5**
+* **CSS**
+
+---
+
+## 📁 Estructura principal
+
+```text
+ajax-react-lab/
+│
+├── public/
+│
+├── src/
+│   ├── App.js
+│   ├── PokemonSearch.js
+│   ├── PokeCard.js
+│   ├── DataLoader.js
+│   ├── CharacterList.js
+│   ├── CharacterLoader.js
+│   ├── index.js
+│   └── index.css
+│
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+> Algunos componentes como `CharacterList.js`, `CharacterLoader.js` y `DataLoader.js` corresponden a las prácticas realizadas durante el laboratorio y no forman parte directamente de la interfaz final de Pokémon.
+
+---
+
+## ⚠️ Consideraciones
+
+La aplicación depende de PokeAPI para obtener los datos. Por lo tanto, si el servicio externo presenta una interrupción, cambios o limitaciones, algunas funcionalidades pueden verse afectadas.
+
+El proyecto no almacena los Pokémon en una base de datos propia.
+
+---
+
+## 🛠️ Crear una nueva versión
+
+Después de realizar cambios:
+
+```bash
+git add .
+git commit -m "Update Pokemon interface"
+git push
+```
+
+Si el proyecto está conectado a Vercel, el nuevo commit provocará automáticamente un nuevo despliegue.
+
+---
+
+## 📦 Crear una versión de producción local
+
+Para comprobar que el proyecto puede compilar correctamente antes de desplegarlo:
+
+```bash
+npm run build
+```
+
+Si la compilación termina correctamente, se generará la carpeta:
+
+```text
+build/
+```
+
+Esta carpeta contiene la versión optimizada de producción.
