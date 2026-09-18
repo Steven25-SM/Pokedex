@@ -1,4 +1,4 @@
-# 🚀 Guía de Despliegue
+# Guía de Despliegue
 
 ## 📌 Requisitos
 
@@ -26,13 +26,8 @@ git --version
 git clone <URL_DEL_REPOSITORIO>
 ```
 
-### 2. Entrar al proyecto
 
-```bash
-cd ajax-react-lab
-```
-
-### 3. Instalar las dependencias
+### 2. Instalar las dependencias
 
 ```bash
 npm install
@@ -40,7 +35,7 @@ npm install
 
 Este comando instala las dependencias definidas en `package.json`.
 
-### 4. Ejecutar en desarrollo
+### 3. Ejecutar en desarrollo
 
 ```bash
 npm start
@@ -51,44 +46,6 @@ La aplicación estará disponible normalmente en:
 ```text
 http://localhost:3000
 ```
-
----
-
-## 🌐 Despliegue en Vercel
-
-Este proyecto puede desplegarse directamente en Vercel porque es una aplicación frontend de React y no requiere un servidor propio.
-
-### 1. Subir el proyecto a GitHub
-
-Si todavía no tienes el repositorio:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <URL_DEL_REPOSITORIO>
-git push -u origin main
-```
-
-### 2. Importar el proyecto en Vercel
-
-1. Ingresa a Vercel.
-2. Inicia sesión con GitHub.
-3. Selecciona **Add New → Project**.
-4. Importa el repositorio del proyecto.
-5. Vercel detectará automáticamente que es un proyecto de React.
-
-Configuración esperada:
-
-```text
-Framework Preset: Create React App
-Build Command: npm run build
-Output Directory: build
-Install Command: npm install
-```
-
-6. Presiona **Deploy**.
 
 ---
 
